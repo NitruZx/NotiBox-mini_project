@@ -8,7 +8,8 @@
 * Breadboard mini 170 holes (35mmx47mm)
 ## สื่อเพิ่มเติม
 * [Demo Video](https://youtu.be/qZLNUMfk49Q)
-* [รูป poster](https://drive.google.com/file/d/1H4Wjjhs4ea0Jx6vxiUSZmKwgc2mgjATY/view?usp=sharing)
+* [รูป Poster](https://drive.google.com/file/d/1H4Wjjhs4ea0Jx6vxiUSZmKwgc2mgjATY/view?usp=sharing)
+* [Github Page](https://nitruzx.github.io/NotiBox-mini_project/)
 ## สมาชิกกลุ่ม
 * นายกณิศพงศ์ ศรีเจริญ 65070003
 * นายเจษฎา แต่งสุวรรณ์ 65070041
