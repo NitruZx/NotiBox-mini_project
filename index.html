@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>NotiBox</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Union College Alumni Association - The Garnet Society">
+  <meta name="author" content="Tucker Massad">
+
+  <title>Union College's Garnet Society</title>
+
+  <!-- Custom fonts -->
+  <link href="https://fonts.googleapis.com/css? family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">NotiBOX</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">Our Work</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 ">NotiBOX</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Notify Mailbox</h2>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">NotiBOX คืออะไร?</h2>
+          <hr class="accessory">
+          <p class="text-white-50">ในทุกวันนี้การรับส่งจดหมายก็ยังเป็นสิ่งที่พบเจอได้อยู่ ถึงแม้ว่าจะมีสิ่งอำนวยความสะดวกด้านการส่งสารผลิตขึ้นมามากมาย การที่เชื่อมต่อการส่งจดหมายแบบ manual เข้ากับเทคโนโลยี IOT เป็นสิ่งที่คณะผู้จัดทำต้องการจะทำ และมันก็เป็นเรื่องที่สะดวกถ้าหากผู้รับจดหมายนั้นสามารถรับรู้ได้ทันทีที่มีจดหมายนั้นมาส่งถึงแม่ว่าจะไม่อยู่ที่ในที่อยู่อาศัย โดนที่ตัวผู้รับนั้นสามารถรับรู้ได้ แม้อยู่ในสถานที่ใดก็ตามที่สามารถเข้าถึงอินเทอร์เน็ต ปัญหาที่ผู้อยู่อาศัยต้องค่อยหมั่นเช็คตู้จดหมายเองบ่อยๆ หรืออาจจะเกิดการลืมจดหมายที่ถูกหย่อนไว้ในตู้จดหมายได้ 
+           <br> <br>ผู้พัฒนาจึงเห็นว่าการที่ทำตู้จดหมายที่สามารถแจ้งเตือนผ่านทาง Line ซึ่งเป็นแอปพลิเคชันการรับส่งข้อความที่ใช้กันอย่างแพร่หลายในยุคปัจจุบันนั้นจะสามารถแก้ไขปัญหาในส่วนนี้ได้ โดยสิ่งประดิษฐ์ชิ้นนี้ คณะผู้จัดทำ ทำให้สามารถมีการแจ้งเตือนเฉพาะจดหมาย หรือการรับพัสดุขนาดเล็กได้เท่านั้นก่อน ซึ่งจะสามารถต่อยอดเป็นการรับพัสดุทุกรูปแบบ หรือประยุกต์เป็นการใช้ Ultrasonic sensor ให้แจ้งเตือนเมื่อมีผู้บุกรุกเข้ามาในอาณาเขตของครัวเรือนของผู้อยู่อาศัยได้
+          </p> 
+          <h2 class="text-white mb-4">  การทำงานโดยสังเขป  </h2>
+          <hr class="accessory">
+          <p class="text-white-50">เมื่อมีการสอดจดหมายเข้ามา ultrasonic sensor จะตัวจับวัตถุซื่งมีเงื่อนไขคือหากมีระยะห่างน้อยกว่า 5 นิ้วจากตัวเซนเซอร์ โดยจะส่ง HTTPS POST Request ไปที่ LINE Notify API server เชื่อมต่อไปที่ notify-api.line.me ที่ server port 443 ซึ่งจะมีการขออนุญาติการส่งข้อความด้วย Line Token (authorization token) เมื่อการส่งขัอความเสร็จสิ้นจะมี delay 5 วินาที หลังจากนั้นจะเริ่มตรวจจับวัตถุใหม่
+          </p>
+          <h2 class="text-white mb-4">สิ่งที่คาดว่าจะได้รับ</h2>
+          <hr class="accessory">
+          <p class="text-white-50">1.สามารถมีการแจ้งเตือนผ่าน line อัตโนมัติเมื่อมีจดหมายมาส่ง<br>
+            2.พัฒนาความรู้การใช้งาน  Ultrasonic Sensor ด้วยการอ่านค่า และคำนวนระยะห่าง<br>
+            3.สามารถใช้งาน NodeMCU 8266 ในการเชื่อมต่อ WIFI และส่งข้อความได้<br>
+            4.สามารถส่งข้อความด้วย line notify โดยการเชื่อมต่อ line notify api และใช้ token</p>
+          
+          <h2 class="text-white">อุปกรณ์</h2>
+          <hr class="accessory" width="50%">
+          <div class="row headshots">
+
+            <div class="col-sm-3">
+  
+              <figure class="one">
+                <img src='./image/breadboard.png' class="headshotphoto" />
+                <p class="text-white headshottext">Breadboard</p>
+  
+              </figure>
+  
+            </div>
+  
+            <div class="col-sm-3">
+  
+              <figure class="one">
+                <img src='./image/esp8266.png' class="headshotphoto" />
+                <p class="text-white headshottext">ESP8266</p>
+              </figure>
+  
+            </div>
+  
+            <div class="col-sm-3">
+  
+              <figure class="one">
+                <img src='./image/Ultrasonic.png' class="headshotphoto" />
+                <p class="text-white headshottext">Ultrasonic</p>
+  
+  
+              </figure>
+  
+            </div>
+            <div class="col-sm-3">
+  
+              <figure class="one">
+                <img src='./image/bank.png' class="headshotphoto" />
+                <p class="text-white headshottext">Powerbank</p>
+  
+  
+              </figure>
+  
+            </div>
+  
+  
+          </div>
+          <br>
+
+          
+
+          <h3 class="text-white">สมาชิก</h3>
+          <hr class="accessory" width="50%">
+
+          <br>
+
+        </div>
+      </div>
+
+      <!-- Headshots -->
+      <div class="container-fluid">
+
+        <!-- Row 1 -->
+        <div class="row headshots">
+
+          <div class="col-sm-3">
+
+            <figure class="one">
+              <img src='./image/gus.jpg' class="headshotphoto" />
+              <p class="text-white headshottext">65070003</p>
+              <p class="text-white headshotgrade">นายกณิศพงศ์ ศรีเจริญ </p>
+
+            </figure>
+
+          </div>
+
+          <div class="col-sm-3">
+
+            <figure class="one">
+              <img src='./image/tar.jpg' class="headshotphoto" />
+              <p class="text-white headshottext">65070041</p>
+              <p class="text-white headshotgrade">นายเจษฎา แต่งสุวรรณ์</p>
+            </figure>
+
+          </div>
+
+          <div class="col-sm-3">
+
+            <figure class="one">
+              <img src='./image/guy.jpg' class="headshotphoto" />
+              <p class="text-white headshottext">65070079</p>
+              <p class="text-white headshotgrade">นายณัฐพงษ์ ชื่นสุขประสงค์</p>
+
+
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div> <br><br>
+
+    </div>
+    <!-- Container div -->
+
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section text-center">
+    <div class="container">
+
+              <div>
+                <h1>Source Code</h1>
+                <img src="./image/code.png" alt="code" width="50%" height="100%">
+              </div>
+              <br><br>
+              <div>
+                <h1>YouTube Video</h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qZLNUMfk49Q?si=ZNLMuTGc7hHtssHW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              </div>
+              <br><br>
+              <div>
+                <h1>Poster</h1>
+                <img src="./image/NotiBox.png" width="50%" height="100%">
+              </div>
+        
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Signup Section -->
+  <!-- <section id="signup" class="signup-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">Submit your email for news & event updates!</h2>
+
+          <form class="form-inline d-flex">
+            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<-- Contact Section -->
+  <section class="contact-section text-center">
+    <div class="container">
+      
+        
+      <!-- <div class="row">
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Address</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">807 Union Street, Schenectady NY 12308</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-envelope text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Email</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">
+                <a href="#">email@union.edu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-mobile-alt text-primary mb-2"></i>
+              <h4 class="text-uppercase m-0">Phone</h4>
+              <hr class="my-4">
+              <div class="small text-black-50">+1 (518) 388-6000</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="social d-flex justify-content-center">
+        <a href="https://www.instagram.com/uniongarnetsociety/" class="mx-2">
+            <i class="fab fa-instagram"></i>
+          </a>
+        <a href="https://www.facebook.com/unioncollege/" class="mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        <a href="https://twitter.com/unioncollege" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Tucker Massad 2019
+    </div>
+  </footer>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
+
+
+</body>
+
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+
+
+</body>
+</html>
